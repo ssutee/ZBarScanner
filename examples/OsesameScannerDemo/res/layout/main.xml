@@ -13,10 +13,11 @@
         android:text="@string/scan" />
 
     <Button
-        android:id="@+id/qrscan_btn"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:onClick="launchQRScanner"
-        android:text="@string/scan_only_qr_codes" />
+            android:id="@+id/photoscan_btn"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:onClick="launchPhotoScanner"
+            android:text="@string/scan_from_photo" />
+
 </LinearLayout>
 
