@@ -19,13 +19,15 @@ import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
 
-public class OsesameScannerActivity extends ScannerActivity implements Camera.PreviewCallback, OsesameConstants {
+abstract public class OsesameScannerActivity extends ScannerActivity implements Camera.PreviewCallback, OsesameConstants {
 
   private static final String TAG = "OsesameScannerActivity";
   private CameraPreview mPreview;
   private Camera mCamera;
   private Handler mAutoFocusHandler;
   private boolean mPreviewing = true;
+
+  abstract public void prepareLayout(RelativeLayout mainLayout);
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +61,16 @@ public class OsesameScannerActivity extends ScannerActivity implements Camera.Pr
     params1.addRule(RelativeLayout.CENTER_IN_PARENT);
     mainLayout.addView(mPreview, params1);
 
-    RelativeLayout.LayoutParams params2 = new RelativeLayout.LayoutParams(
-        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-    params2.addRule(RelativeLayout.CENTER_IN_PARENT);
-    TextView txtDemo = new TextView(this);
-    txtDemo.setText("DEMO");
-    txtDemo.setTextSize(30);
-    txtDemo.setTextColor(Color.GRAY);
-    mainLayout.addView(txtDemo, params2);
+//    RelativeLayout.LayoutParams params2 = new RelativeLayout.LayoutParams(
+//        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//    params2.addRule(RelativeLayout.CENTER_IN_PARENT);
+//    TextView txtDemo = new TextView(this);
+//    txtDemo.setText("DEMO");
+//    txtDemo.setTextSize(30);
+//    txtDemo.setTextColor(Color.GRAY);
+//    mainLayout.addView(txtDemo, params2);
+
+    prepareLayout(mainLayout);
 
     setContentView(mainLayout);
   }

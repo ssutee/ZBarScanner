@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 
   public void launchScanner(View v) {
     if (isCameraAvailable()) {
-      Intent intent = new Intent(this, OsesameScannerActivity.class);
+      Intent intent = new Intent(this, MyScannerActivity.class);
       startActivityForResult(intent, SCANNER_REQUEST);
     } else {
       Toast.makeText(this, "Rear Facing Camera Unavailable", Toast.LENGTH_SHORT).show();

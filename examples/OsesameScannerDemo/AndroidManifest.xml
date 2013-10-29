@@ -17,11 +17,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.osesame.android.scanner.OsesameScannerActivity"
-                  android:screenOrientation="landscape"
+        <activity android:name="com.osesame.android.scanner.OsesamePhotoScannerActivity"
                   android:label="@string/app_name" />
 
-        <activity android:name="com.osesame.android.scanner.OsesamePhotoScannerActivity"
+        <activity android:name=".MyScannerActivity"
+                  android:screenOrientation="landscape"
                   android:label="@string/app_name" />
 
     </application>
